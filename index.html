@@ -7,25 +7,23 @@
         - matplotlib
       </py-env> 
     </head> 
-  <body> 
-    <py-script> 
-      print('안녕 파이썬!!') 
-      print("<h1>랜덤하게 점을 찍어봐!</h1>") 
-      print("hello")
-      print("hello world")
-    </py-script> 
-    <div id="plot"></div> 
-    <py-script output="plot"> 
-        import numpy as np 
-        def make_x_and_y(n): 
-            x = np.random.randn(n) 
-            y = np.random.randn(n) 
-            return x, y
-        import matplotlib.pyplot as plt 
-        x, y = make_x_and_y(n=1000) 
-        fig, ax = plt.subplots() 
-        ax.scatter(x, y) 
-        fig 
-    </py-script> 
-  </body> 
+    <body> 
+      <h1>대한민국 인구</h1>
+      <div id="poplulation_layer"></div>
+      <py-script output="poplulation_layer"> 
+        import matplotlib.pyplot as plt
+        fig = plt.figure()
+        year = [
+          1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 
+          2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013,
+          2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021]
+          
+        population = [
+          45416339, 45858029, 46266256, 46684069, 46991171, 47335678, 47732558, 48021543, 48229948, 48386823,
+          48583805, 48782274, 48991779, 49268928, 49540367, 49773145, 50515666, 50734284, 50948272, 51141463,
+          51327916, 51529338, 51696216, 51778544, 51826059, 51849861, 51829023, 51638809 ]
+        plt.plot(year, population, label='Korea' )
+        fig
+      </py-script> 
+    </body> 
 </html>
